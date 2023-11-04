@@ -7,8 +7,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^10.5.2",
-    "react": "^18.2.0",
+    "react": "^18.2.0",https://github.com/tomatoboy-hub/Yurutto_Monster/pull/2/conflict?name=package.json&ancestor_oid=7c3479002d303de44e8ec6250a5cfd25d2f5ba90&base_oid=7293d31a3c94f155f6843a28c8cbeadde3ad2f09&head_oid=e7d6c19c96fbd2a9993eaca1a748e5544b31ee86
     "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

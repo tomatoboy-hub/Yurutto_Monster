@@ -18,28 +18,15 @@ import mon8 from "./images/monster/mon8.png";
 import mon9 from "./images/monster/mon9.png";
 import monx from "./images/monster/q.png";
 import Header from './components/Header';
-
-const charas = [
-  { image: mon1, name: 'ココフロちゃん', bathhouse: 'COCOFURO' },
-  { image: mon2, name: 'ココフーラさん', bathhouse: 'COCOFURO' },
-  { image: mon3, name: 'ココフルさん', bathhouse: 'COCOFURO' },
-  { image: mon4, name: 'ますたろう', bathhouse: 'ますの湯' },
-  { image: mon5, name: 'ますやん', bathhouse: 'ますの湯' },
-  { image: mon6, name: 'まっさん', bathhouse: 'ますの湯' },
-  { image: mon7, name: 'くろゆくん', bathhouse: '改正湯' },
-  { image: mon8, name: 'くろゆん', bathhouse: '改正湯' },
-  { image: mon9, name: 'くろろん', bathhouse: '改正湯' },
-  { image: monx, name: 'xxx', bathhouse: 'xxx' },
-  { image: monx, name: 'xxx', bathhouse: 'xxx' },
-  { image: monx, name: 'xxx', bathhouse: 'xxx' },
-];
+import CouponPage from './components/yohei_coupon/CouponPage';
+import CouponCard from './components/yohei_coupon/CouponCard';
 
 function App() {
   return (
     <AuthProvider>
     <div className="App">
-      <Header title="湯るっとモンスター図鑑" />
-      <CharaList charas={charas} />
+      <Header title="獲得クーポン一覧" />
+      <CouponPage />
     </div>
     </AuthProvider>
   );

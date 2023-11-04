@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore,doc, setDoc  } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { GoogleAuthProvider } from "firebase/auth";
 
@@ -20,3 +20,5 @@ const app = initializeApp(firebaseConfig);
 export const provider = new GoogleAuthProvider();
 // 認証サービスの取得
 export const auth = getAuth(app);
+
+export const db =  getFirestore(app);

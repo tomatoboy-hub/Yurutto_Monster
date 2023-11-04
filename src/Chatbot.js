@@ -1,6 +1,7 @@
 import './chatbot.css';
 import {useState} from "react";
-import chara from "./images/chara.jpeg";
+import chara from "./images/chara1.jpeg";
+
 
 function Chatbot() {
   const [changeChat, setChangeChat] = useState({message: "改正湯にようこそ！！！"});

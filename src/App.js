@@ -1,5 +1,6 @@
 
 import Chatbot from './Chatbot';
+import Charalist from './Charalist';
 import './App.css';
 import Login from './components/Login';
 import User from './components/User';
@@ -11,6 +12,7 @@ function App() {
     <AuthProvider>
     <div className="App">
       <Chatbot />
+      <Charalist />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login/>} />

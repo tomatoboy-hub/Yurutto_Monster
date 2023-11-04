@@ -1,11 +1,14 @@
 import React from 'react'
 import Header from './Header';
 import "./styles/homestyle.css";
+import { useAuthContext } from '../context/AuthContext';
+import AHeader from '../aft_components/AHeader';
 function Home() {
+    const { user } = useAuthContext();
+
   return (
     <>
-    <Header />
-
+    {user ? <AHeader/>:<Header />}
       <section className="banner">
         <div className="container">
           <h1>心を癒す極上の温泉体験</h1>

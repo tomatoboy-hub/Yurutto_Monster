@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-
+import { GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,5 +15,8 @@ const firebaseConfig = {
 // Firebaseアプリの初期化
 const app = initializeApp(firebaseConfig);
 
+
+
+export const provider = new GoogleAuthProvider();
 // 認証サービスの取得
 export const auth = getAuth(app);

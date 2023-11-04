@@ -6,16 +6,12 @@ import User from './components/User';
 import Home from './components/Home';
 import { AuthProvider } from './context/AuthContext';
 import {Routes ,Route} from 'react-router-dom';
+import QrCodeReader from './QrCodeReader';
 function App() {
   return (
     <AuthProvider>
     <div className="App">
-      <Chatbot />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/user" element={<User/>} />
-      </Routes>
+      <QrCodeReader />
     </div>
     </AuthProvider>
   );

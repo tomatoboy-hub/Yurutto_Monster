@@ -48,7 +48,7 @@ const QrApp = () => {
           <Box flex={1} height={"60vh"}>
             <QrCodeReader onReadQRCode={handleReadQRCode} />
           </Box>
-          <LevelUp url={qrUrl} />
+          <LevelUp url={qrUrl} seturl={setQrUrl} />
         </Flex>
       </Container>
     </ChakraProvider>

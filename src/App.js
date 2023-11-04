@@ -1,8 +1,7 @@
 import './App.css';
 import Login from './components/Login';
-import Signup from './components/Signup';
 import User from './components/User';
-
+import Home from './components/Home';
 import { AuthProvider } from './context/AuthContext';
 import {Routes ,Route} from 'react-router-dom';
 function App() {
@@ -10,7 +9,7 @@ function App() {
     <AuthProvider>
     <div className="App">
       <Routes>
-        <Route path="/" element={<Signup />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/user" element={<User/>} />
       </Routes>

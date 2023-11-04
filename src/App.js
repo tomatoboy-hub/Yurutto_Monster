@@ -1,10 +1,23 @@
-import QrCodeReader from "./QrCodeReader";
 
+import Chatbot from './Chatbot';
+import './App.css';
+import Login from './components/Login';
+import User from './components/User';
+import Home from './components/Home';
+import { AuthProvider } from './context/AuthContext';
+import {Routes ,Route} from 'react-router-dom';
 function App() {
   return (
-    <div>
-      <QrCodeReader />
+    <AuthProvider>
+    <div className="App">
+      <Chatbot />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/user" element={<User/>} />
+      </Routes>
     </div>
+    </AuthProvider>
   );
 }
 

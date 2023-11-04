@@ -11,11 +11,12 @@ const LevelUp = ({ url,setUrl }) => {
     const fetchCharacterData = async () => {
         if (user && url) {
           try {
+            console.log("fetchCharacterData");
             // URLに基づいてキャラクター情報を取得
             const urlQuery = query(collection(db, "character"), where("url", "==", url));
             
             const querySnapshot = await getDocs(urlQuery);
-            
+            console.log("querySnapshot",querySnapshot)
             // 対応するキャラクターの経験値を更新
             querySnapshot.forEach(async (docu) => {
               const charData = docu.data()
@@ -23,13 +24,14 @@ const LevelUp = ({ url,setUrl }) => {
               const usercharDocSnap = await getDoc(usercharDocRef);
 
               if (usercharDocSnap.exists()) {
+                console.log("usercharDocSnap",usercharDocSnap)
                 const usercharData = usercharDocSnap.data();
                 if (!usercharData.isOwned){
                     await updateDoc(usercharDocRef, { isOwned: true });
 
                 } else {
-                await updateDoc(usercharDocRef, {
-                  experience: (usercharData.experience) + 50
+                    await updateDoc(usercharDocRef, {
+                    experience: (usercharData.experience) + 50
                 })
 
                 if ((usercharData.experience || 0) + 50 > charData.maxexp) {

@@ -1,0 +1,46 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.banner {
+    background: url('../../images/banner-image2.png') no-repeat center center/cover;
+    height: 1000px;
+    color: #0e8198;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}

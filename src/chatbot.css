@@ -5,19 +5,15 @@
 	display:inline-block;
 	border: 1px solid #333;
 	padding: 20px;
-	margin: 5px 0;
-	height: 50px;
+	margin: auto;
+	height: auto;
 	line-height: 25px;
 	background-color: rgb(249, 252, 249);
 	color: black;
 	vertical-align:  middle;
-	text-align: center;
+	text-align: left;
 	border-radius:20px;
 	margin: auto;
-	
-}
-.reply{
-	
 }
 
 .fare-button {
@@ -66,9 +62,9 @@
 	color: #27acd9;
 }
 
-.history-button {
+.facility-button {
 	display:inline-block;
-	text-align: center;
+	text-align: left;
 	vertical-align: middle;
 	text-decoration: none;
 	position: relative;
@@ -83,7 +79,7 @@
 	box-shadow: 5px 5px #27acd9;
 	transition: 0.3s ease-in-out;
 }
-.history-button:hover {
+.facility-button:hover {
 	box-shadow: none;
 	transform: translate(5px, 5px);
 	color: #27acd9;

@@ -1,18 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { BrowserQRCodeReader } from "@zxing/browser";
-import {
-  Box,
-  ChakraProvider,
-  Container,
-  Fade,
-  Flex,
-  Heading,
-  Table,
-  Tbody,
-  Td,
-  Tr
-} from "@chakra-ui/react";
-
+import { ChakraProvider, Container, Box, Flex } from "@chakra-ui/react";
+import { useState } from "react";
+import LevelUp from "./LevelUp";    
 const QrCodeReader = ({ onReadQRCode }) => {
   const controlsRef = useRef(null);
   const videoRef = useRef(null);
@@ -26,9 +16,6 @@ const QrCodeReader = ({ onReadQRCode }) => {
       undefined,
       videoRef.current,
       (result, error, controls) => {
-        if (error) {
-          return;
-        }
         if (result) {
           onReadQRCode(result);
         }
@@ -36,55 +23,32 @@ const QrCodeReader = ({ onReadQRCode }) => {
       }
     );
     return () => {
-      if (controlsRef.current) {
-        controlsRef.current.stop();
-        controlsRef.current = null;
-      }
+      controlsRef.current?.stop();
+      controlsRef.current = null;
     };
   }, [onReadQRCode]);
 
-  return (
-    <video
-      style={{ maxWidth: "100%", maxHeight: "100%", height: "100%" }}
-      ref={videoRef}
-    />
-  );
-};
-
-const QrCodeResult = ({ qrCodes }) => {
-  return (
-    <Table>
-      <Tbody>
-        {qrCodes.map((qr, i) => (
-          <Tr key={i}>
-            <Td>
-              <Fade in={true}>{qr}</Fade>
-            </Td>
-          </Tr>
-        ))}
-      </Tbody>
-    </Table>
-  );
+  return <video ref={videoRef} style={{ width: "100%", height: "auto" }} />;
 };
 
 const QrApp = () => {
-  const [qrCodes, setQrCodes] = useState([]);
+    const [qrUrl, setQrUrl] = useState('')
+  const handleReadQRCode = (result) =>{
+    setQrUrl(result.text);
+  };
+  useEffect(() => {
+    console.log("QR URL updated:", qrUrl);
+    // qrUrlが更新されたことを確認
+  }, [qrUrl]);
 
   return (
     <ChakraProvider>
       <Container>
         <Flex flexDirection="column">
           <Box flex={1} height={"60vh"}>
-            <QrCodeReader
-              onReadQRCode={(result) => {
-                setQrCodes((codes) => [result.getText(), ...codes]);
-              }}
-            />
+            <QrCodeReader onReadQRCode={handleReadQRCode} />
           </Box>
-          <Box flex={1} height={"40vh"}>
-            <Heading>Result</Heading>
-            <QrCodeResult qrCodes={qrCodes} />
-          </Box>
+          <LevelUp url={qrUrl} />
         </Flex>
       </Container>
     </ChakraProvider>

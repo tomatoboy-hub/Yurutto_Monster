@@ -70,7 +70,6 @@ function User() {
             )}
             <h1>{characterData ? `Level: ${characterData.level}` : 'Loading character data...'}</h1>
             <h1>{characterData ? `experience: ${characterData.experience}`:'Loading exp data...'}</h1>
-            <button onClick={handleLogout}>Logout</button>
             <button onClick={handleReader}>Reader</button>
             {isReader ? <Reader/> : null}
 

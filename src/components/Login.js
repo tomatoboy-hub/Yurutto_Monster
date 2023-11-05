@@ -40,8 +40,8 @@ async function initializeUserCharacters(user, db) {
 
   // 各キャラクターの初期データと参照をユーザーのサブコレクションに保存
   const characterData = [
-    { id: "char1", isOwned: true, experience: 0 },
-    { id: "char2", isOwned: false, experience: 0 },
+    { id: "char1", isOwned: true, experience: 0 ,level:0},
+    { id: "char2", isOwned: false, experience: 0 ,level:0},
     // 他のキャラクターのデータも同様に追加...
   ];
 

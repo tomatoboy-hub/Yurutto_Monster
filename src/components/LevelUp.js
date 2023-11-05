@@ -34,7 +34,7 @@ const LevelUp = ({ url,setUrl }) => {
                     experience: (usercharData.experience) + 50
                 })
 
-                if ((usercharData.experience || 0) + 50 > charData.maxexp) {
+                if ((usercharData.experience || 0) + 50 >= charData.maxexp) {
                   await updateDoc(usercharDocRef, {
                     level: (usercharData.level || 0) + 1,
                     experience: 0

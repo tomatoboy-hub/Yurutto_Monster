@@ -1,6 +1,7 @@
 import './chatbot.css';
 import {useState} from "react";
 import chara from "./images/chara.jpeg";
+import Header from "./components/Header";
 
 function Chatbot() {
   const [changeChat, setChangeChat] = useState({message: "改正湯にようこそ！！！"});
@@ -25,6 +26,7 @@ function Chatbot() {
 
   return (
     <div>
+      <Header/>
       <img src={chara}/><br/>
       <p className="reply"><div className="content">{changeChat.message}</div></p>
       <button className="fare-button" onClick={Fare}>料金</button>

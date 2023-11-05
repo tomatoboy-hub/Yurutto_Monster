@@ -56,6 +56,7 @@ async function initializeUserCharacters(user, db) {
     // ユーザードキュメントにキャラクター参照とその他の情報を保存
     await setDoc(userCharacterRef, {
       characterRef: characterRef,
+
       ...char
     });
   }
@@ -72,6 +73,9 @@ async function initializeUserOnLogin(user){
       email:user.email,
       name:user.displayName,
       photoUrl:user.photoURL,
+      nowchara:"char1",
+      nowimg:"https://drive.google.com/uc?id=1BYTXQKfqma93uEF5FQ-n7UsLWxjwTckv"
+
     },{merge:true});
 
     await initializeUserCharacters(user,db);

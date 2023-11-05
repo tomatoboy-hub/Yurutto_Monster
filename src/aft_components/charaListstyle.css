@@ -1,0 +1,25 @@
+.chara-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .chara {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .chara img {
+    width: 200px; /* 必要に応じて画像サイズを調整 */
+    height: 200px;
+  }
+  
+  .chara-info {
+    text-align: center;
+    font-weight: bold; 
+  }
+  
